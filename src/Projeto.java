@@ -8,8 +8,8 @@ public class Projeto {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		int escolaridade, experiencia, pontoescolaridade, pontoexperiencia ;
-		char viajens, habilitacao;
+		int escolaridade, experiencia, pontoescolaridade, pontoexperiencia, a;
+		char viagens, habilitacao;
 		
 		System.out.println ("Qual sua escolaridade?");
 		System.out.println ("1) Ensino Fundamental");
@@ -23,7 +23,7 @@ public class Projeto {
 		System.out.print("Você tem quantos anos de experiência profissional? ");
 		experiencia = sc.nextInt();
 		System.out.print("Você tem disponibilidade para viajar (S/N)? ");
-		viajens = sc.next().charAt(0);
+		viagens = sc.next().charAt(0);
 		System.out.print("Você tem habilitação de motorista (S/N)? ");
 		habilitacao = sc.next().charAt(0);
 		
@@ -59,6 +59,23 @@ public class Projeto {
 		System.out.println("Pontos por escolaridade: " + pontoescolaridade);
 		System.out.println("Pontos por experiência: " + pontoexperiencia);
 
+		System.out.println();
+		if (escolaridade == 1) {
+			System.out.println("Infelizmente seu perfil não atende a empresa");
+		}
+		else {
+			System.out.println("Você está habilitado para o(s) seguinte(s) cargo(s):");
+			
+		if (escolaridade == 2 && habilitacao == 'S') {
+			System.out.println("ASSISTENTE");
+		}
+		if (escolaridade >= 3 && experiencia > 2) {
+			System.out.println("GERENTE");
+		}
+		if (escolaridade >= 3 && experiencia > 5 && viagens == 'S'){
+			System.out.println("ANALISTA");
+		} 
+		}
 		
 		sc.close();
 	}
