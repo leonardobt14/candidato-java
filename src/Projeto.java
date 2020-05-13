@@ -8,7 +8,7 @@ public class Projeto {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		int escolaridade, experiencia;
+		int escolaridade, experiencia, pontoescolaridade, pontoexperiencia ;
 		char viajens, habilitacao;
 		
 		System.out.println ("Qual sua escolaridade?");
@@ -27,6 +27,38 @@ public class Projeto {
 		System.out.print("Você tem habilitação de motorista (S/N)? ");
 		habilitacao = sc.next().charAt(0);
 		
+		if (escolaridade == 1) {
+			pontoescolaridade = 10;
+		}
+		else if (escolaridade == 2){
+			pontoescolaridade = 20;
+		}
+		else if (escolaridade == 3){
+			pontoescolaridade = 30;
+		} 
+		else {
+			pontoescolaridade = 40;
+		}
+		
+		
+		if (experiencia == 0) {
+			pontoexperiencia = 0;
+		}
+		else if (experiencia <= 2){
+			pontoexperiencia = 10;
+		}
+		else if (experiencia > 2 && experiencia <= 5){
+			pontoexperiencia = 20;
+		} 
+		else {
+			pontoexperiencia = 40;
+		}
+		
+		
+		System.out.println();
+		System.out.println("Pontos por escolaridade: " + pontoescolaridade);
+		System.out.println("Pontos por experiência: " + pontoexperiencia);
+
 		
 		sc.close();
 	}
